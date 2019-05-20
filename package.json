@@ -1,0 +1,51 @@
+{
+  "name": "vscode-extension-react-app-starter",
+  "version": "0.1.0",
+  "publisher": "souporserious",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.34.0"
+  },
+  "main": "./out/extension",
+  "activationEvents": [
+    "onCommand:react-app.start"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "react-app.start",
+        "title": "My React App Extension"
+      }
+    ]
+  },
+  "scripts": {
+    "compile": "npm-run-all compile:*",
+    "compile:extension": "tsc",
+    "compile:views": "webpack --mode development",
+    "watch": "npm-run-all -p watch:*",
+    "watch:extension": "tsc --watch",
+    "watch:views": "webpack --watch --mode development",
+    "postinstall": "node ./node_modules/vscode/bin/install",
+    "vscode:prepublish": "yarn compile",
+    "package": "vsce package"
+  },
+  "dependencies": {
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "vscode": "^1.1.34"
+  },
+  "devDependencies": {
+    "@types/node": "^12.0.2",
+    "@types/react": "^16.8.17",
+    "@types/react-dom": "^16.8.4",
+    "css-loader": "^2.1.1",
+    "npm-run-all": "^4.1.5",
+    "style-loader": "^0.23.1",
+    "ts-import-plugin": "^1.5.5",
+    "ts-loader": "^6.0.1",
+    "typescript": "^3.4.5",
+    "vsce": "^1.61.0",
+    "webpack": "^4.15.1",
+    "webpack-cli": "^3.0.8"
+  }
+}
